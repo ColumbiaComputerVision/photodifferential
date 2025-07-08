@@ -1,0 +1,64 @@
+global_params:
+    exp_name: urbansky
+    multiprocessing: True
+
+scene_collection:
+    target: sim.SceneCollection
+    params:
+        img_dataset_path: <path to urbansky dataset>
+        cut_lower_hemisphere: False
+        icosphere_filename: sphere-20k.stl
+
+preprocessing:
+    convolve_latlon_D: 16
+    kernel_types:
+    - half_cosine
+    - tilt_0.1
+    - tilt_5
+    - tilt_10
+    - tilt_15
+    - tilt_20
+    - tilt_25
+    - tilt_30
+    - tilt_35
+    - tilt_40
+    - tilt_45
+    - tilt_50
+    - tilt_55
+    - tilt_60
+    - tilt_65
+    - tilt_70
+    - tilt_75
+    - tilt_80
+    - tilt_85
+    - tilt_90
+
+optimization:
+    target: sim.Optimizer
+    params:
+        rot_step_size_deg: 2
+        iter_max: 800
+        num_trials: 100
+        override_prev_runs: True
+        kernel_types:
+        - tilt_0.1
+        - tilt_5
+        - tilt_10
+        - tilt_15
+        - tilt_20
+        - tilt_25
+        - tilt_30
+        - tilt_35
+        - tilt_40
+        - tilt_45
+        - tilt_50
+        - tilt_55
+        - tilt_60
+        - tilt_65
+        - tilt_70
+        - tilt_75
+        - tilt_80
+        - tilt_85
+        - tilt_90
+        noise_level:
+        - !!str 0
